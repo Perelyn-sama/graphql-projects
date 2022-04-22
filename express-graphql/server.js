@@ -8,7 +8,7 @@ const schema = buildSchema(`
     }
 `);
 
-const root = { hello: () => "Hello World" };
+const root = { hello: () => "Hello world!" };
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(
   graphqlHTTP({
     schema: schema,
     rootValue: root,
-    graphql: true,
+    graphiql: true,
   })
 );
-app.listen(7000, () => console.log("Now browse to localhost:4000/graphql"));
+app.listen(7000, () => console.log("Now browse to localhost:7000/graphql"));
